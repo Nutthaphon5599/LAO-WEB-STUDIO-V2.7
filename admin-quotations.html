@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="lo">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quotations — Lao Web Studio Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body" data-admin-page="quotations">
+<header class="admin-header">
+  <a class="brand" href="index.html"><img src="assets/logo.png" alt=""><span>LAO WEB STUDIO</span></a>
+  <div class="header-actions"><select id="admin-lang" aria-label="Language"><option value="lo">ລາວ</option><option value="th">ไทย</option><option value="en">EN</option></select><a class="btn btn-secondary" href="index.html#portfolio" data-ai="viewSite"></a></div>
+</header>
+<nav class="admin-nav" aria-label="Admin navigation">
+  <a href="admin.html" data-page-link="dashboard">Dashboard</a>
+  <a href="admin-customers.html" data-page-link="customers">Customers</a>
+  <a href="admin-quotations.html" data-page-link="quotations">Quotations</a>
+  <a href="admin-appointments.html" data-page-link="appointments">Appointments</a>
+  <a href="admin-team.html" data-page-link="team">Team</a>
+  <a href="admin-pricing.html" data-page-link="pricing">Pricing</a>
+  <a href="admin-projects.html" data-page-link="projects">Portfolio</a>
+</nav>
+<main class="admin-main"><p id="global-status" class="save-status" aria-live="polite"></p>
+<section id="login-card" class="pricing-admin-card" hidden><h2 data-ai="adminLogin"></h2><form id="login-form" class="pricing-admin-form"><label>Email<input id="login-email" type="email" required></label><label><span data-ai="password"></span><input id="login-password" type="password" required></label><button class="btn btn-primary" type="submit" data-ai="login"></button></form></section>
+<div id="admin-app" hidden>
+<section class="admin-intro admin-page-section page-dashboard"><span>WEBSITE ADMIN · V2.7 ADMIN WORKFLOW</span><h1 data-ai="introTitle"></h1><p data-ai="introText"></p><div class="notice"><b data-ai="note"></b> <span data-ai="noteText"></span></div></section>
+<section class="pricing-admin-card v24-overview-card admin-page-section page-dashboard"><div class="admin-list-head"><div><span class="mini-label">BUSINESS CRM · V2.5</span><h2>Dashboard</h2></div><span class="owner-badge">Owner: Nutthaphon</span></div><div id="v24-dashboard" class="v24-dashboard"></div></section>
+<section class="pricing-admin-card leads-card admin-page-section page-customers">
+  <div class="admin-list-head"><div><span class="mini-label">CUSTOMER CRM</span><h2 data-ai="crmTitle"></h2></div><div class="crm-head-actions"><button id="export-leads" class="btn btn-secondary small" type="button">Export CSV</button><button id="refresh-leads" class="btn btn-secondary small" type="button" data-ai="refresh"></button></div></div>
+  <div id="lead-stats" class="lead-stats"></div>
+  <div class="lead-toolbar"><label><span data-ai="search"></span><input id="lead-search" data-ai-placeholder="searchPlaceholder"></label><label><span data-ai="status"></span><select id="lead-filter"><option value="all" data-ai="all"></option><option value="new">New</option><option value="contacted">Contacted</option><option value="completed">Completed</option></select></label></div>
+  <div id="lead-list" class="lead-list"></div>
+</section>
+<section class="pricing-admin-card admin-page-section page-quotations"><div class="admin-list-head"><div><span class="mini-label">QUOTATIONS</span><h2>ໃບສະເໜີລາຄາ / Quotations</h2></div></div><div id="v24-quotes" class="v24-quotes"></div></section>
+<section class="pricing-admin-card admin-page-section page-appointments"><div class="admin-list-head"><div><span class="mini-label">CALENDAR</span><h2 id="v25-appointments-title">ການນັດໝາຍລູກຄ້າ</h2></div><button id="v25-add-appointment" class="btn btn-primary small" type="button">+ ເພີ່ມນັດໝາຍ</button></div><div id="v25-appointments" class="v25-appointments"></div></section>
+<section class="pricing-admin-card admin-page-section page-team"><div class="admin-list-head"><div><span class="mini-label">TEAM</span><h2 id="v25-team-title">ທີມງານ</h2></div><span class="owner-badge">Current owner: Nutthaphon</span></div><div id="v25-team" class="v25-team"></div><form id="v25-team-form" class="v25-inline-form"><input id="v25-team-name" placeholder="Employee name" required><input id="v25-team-email" type="email" placeholder="Email"><select id="v25-team-role"><option value="staff">Staff</option><option value="manager">Manager</option><option value="owner">Owner</option></select><button class="btn btn-secondary small" type="submit">Add employee</button></form></section>
+<section class="pricing-admin-card admin-page-section page-pricing"><div class="admin-list-head"><div><span class="mini-label">PRICING</span><h2 data-ai="pricingTitle"></h2></div></div>
+<form id="pricing-form" class="pricing-admin-form"><label>Starter<input id="price-starter" inputmode="numeric" placeholder="200.000" required></label><label>Business<input id="price-business" inputmode="numeric" placeholder="500.000" required></label><label>Premium<input id="price-premium" inputmode="numeric" placeholder="800.000" required></label><label><span data-ai="currency"></span><input id="price-currency" value="ກີບ" required></label><button class="btn btn-primary" type="submit" data-ai="savePrice"></button></form><p class="save-status" id="pricing-status" aria-live="polite"></p></section>
+<section class="admin-layout admin-page-section page-projects"><form id="project-form" class="admin-form"><input type="hidden" id="edit-id"><h2 id="form-title" data-ai="addProject"></h2>
+<div class="field-grid"><label>ປະເພດ (ລາວ)<input id="category-lo" required></label><label>ประเภท (ไทย)<input id="category-th" required></label><label>Category (English)<input id="category-en" required></label></div>
+<div class="field-grid"><label>ຊື່ຜົນງານ (ລາວ)<input id="name-lo" required></label><label>ชื่อผลงาน (ไทย)<input id="name-th" required></label><label>Project name (English)<input id="name-en" required></label></div>
+<div class="field-grid"><label>ລາຍລະອຽດ (ລາວ)<textarea id="desc-lo" rows="4" required></textarea></label><label>รายละเอียด (ไทย)<textarea id="desc-th" rows="4" required></textarea></label><label>Description (English)<textarea id="desc-en" rows="4" required></textarea></label></div>
+<label>Website URL<input id="project-url" type="url" placeholder="https://..." required></label><label><span data-ai="coverImage"></span><input id="project-image" type="file" accept="image/*"><small data-ai="imageHelp"></small></label>
+<div class="form-actions"><button class="btn btn-primary" type="submit" data-ai="saveProject"></button><button class="btn btn-secondary" type="button" id="cancel-edit" hidden data-ai="cancel"></button></div></form>
+<div><div class="admin-list-head"><h2><span data-ai="currentProjects"></span> <span id="count"></span></h2></div><div id="project-list" class="admin-list"></div></div></section>
+<div class="admin-logout-wrap"><button id="logout" class="text-btn danger" type="button" data-ai="logout"></button></div></div></main>
+<script>document.querySelector(`[data-page-link="${document.body.dataset.adminPage}"]`)?.classList.add("active");</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="supabase-client.js"></script><script src="projects.js"></script><script src="pricing.js"></script><script src="leads.js"></script><script src="admin.js"></script><script src="crm-v24.js"></script><script src="crm-v25.js"></script>
+<script src="admin-workflow.js"></script></body></html>
